@@ -16,8 +16,33 @@
 //     monthOfBirth: 'July'
 // }
 
+let myOject = {
+  name: {
+    first: 'Carl',
+    last: 'Dumas',
+  },
+  age: '39',
+  hometown: 'Saint-Jean-sur-Richelieu',
+  occupation: 'QA',
+  monthOfBirth: 'August',
+  favorite: {
+    sport: 'Olympic Weightlifting',
+    meal: 'Spaguetti',
+  },
+  pets: {
+    name: 'Kelly',
+    race: 'Dog',
+    breed: 'Doberman',
+    number: '1',
+    age: '4',
+  }
+}
 // A) console.log() your object.
+console.log(myOject);
+
 // B) console.log() a few of the values in the object.
+console.log(myOject.age);
+console.log(myOject.name.first);
 
 //-------------------------------------------------
 
@@ -47,8 +72,15 @@
 // HINT: Most movies have multiple actors. What data-structure do we use to
 // represent a collection of similar things?
 
-let favoriteMovie = {};
+let favoriteMovie = {
+  title: 'The Matrix',
+  director: 'Lana Wachowski',
+  yearReleased: 1999,
+  ratings: '8.7/10',
+  actors: ['Keanu Reeves', 'Laurence Fishburne', 'Carrie-Anne Moss'],
+};
 
+console.log(favoriteMovie)
 //-------------------------------------------------
 
 // Exercise C
@@ -62,8 +94,10 @@ const person = {
   hometown: 'somewhere',
 };
 
-person[age]; // => 26
+person.age; // => 26
+console.log(person.age);
 person.key; // => "Alyssa P. Hacker"
+console.log(person['name']);
 
 //-------------------------------------------------
 
@@ -85,7 +119,7 @@ const alyssa = {
 };
 
 function fullName(person) {
-  // Your code here
+  return `${person.name.first} ${person.name.middle} ${person.name.last}`;
 }
 
 console.log(fullName(alyssa)); // => "Alyssa P. Hacker"
@@ -109,7 +143,11 @@ const rick = {
 };
 
 function betterFullName(person) {
-  // Your code here
+  let nameArr = [person.name.first, person.name.middle, person.name.last];
+
+  nameArr = nameArr.filter((name) => typeof name === 'string');
+
+  return nameArr.join(' ');
 }
 
 console.log(betterFullName(rick)); // => "Rick Sanchez"

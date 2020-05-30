@@ -87,8 +87,58 @@ For example, the main superpowers array should be:
 ⛔️ ['can-blink-lights', null]
 */
 
+
+// Instead of `superpower1` and `superpower2`, an array is used
+function getSuperpower(superpower1, superpower2) {
+  let superpowerArr = [];
+
+  if (superpower1) {
+    superpowerArr.push(superpower1);
+  }
+  if (superpower2) {
+    superpowerArr.push(superpower2);
+  }
+  return superpowerArr;
+} 
+
+
 function transformData(data) {
-  // Your code here
+  let outputData = {
+    name: data.name,
+    age: data.age,
+    status: data.status,
+    address: {
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry,
+    },
+  };
+  // console.log(outputData);
+  
+  outputData.superpowers = getSuperpower(data.superpower1, data.superpower2);
+  //console.log(outputData);
+
+  let mother = {
+    type: 'mother',
+    name: data.motherName,
+    age: data.motherAge,
+    status: data.motherStatus,
+    superpowers: getSuperpower(data.superpower1, data.superpower2),
+  };
+
+  let girlfriend = {
+    type: 'girrlfriend',
+    name: data.bestFriendName,
+    age: data.girlfriendAge,
+    status: data.girlfriendStatus,
+    superpower: getSuperpower(data.girlfriendSuperpower1, data.girlfriendSuperpower1)
+  };
+
+  outputData.relationships = [mother, girlfriend];
+
+  // console.log(outputData);
+  return outputData;
 }
 
 /*

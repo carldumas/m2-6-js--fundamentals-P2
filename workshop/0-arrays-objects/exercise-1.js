@@ -25,3 +25,20 @@ let mostPopularFood = [
 // Output them in a tidy top-ten fashion in the console.
 
 // NO for loops (use `forEach` instead)
+
+console.log(mostPopularFood);
+
+
+// 1- Add 'bean burritos' to position one
+mostPopularFood.unshift('bean burritos');
+console.log(mostPopularFood);
+
+// 2- Remove undefined and add 'buffalo-flavored cauliflower' at the end
+mostPopularFood.pop();
+mostPopularFood.push('buffalo-flavored cauliflower');
+console.log(mostPopularFood);
+
+// Output top-ten fashion in the console
+mostPopularFood.forEach((item, id) => {
+  console.log(`${id + 1}: ${item}`);
+});

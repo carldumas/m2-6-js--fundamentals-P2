@@ -11,3 +11,17 @@ const earlyBirds = ['Ellen', 'Jerry', 'Jasmine'];
 // Output them in a tidy list from first to last arrival the console.
 
 // NO for loops!
+
+
+console.log(lateComers);
+console.log(earlyBirds);
+
+
+// Create a new array that holds all of the party attendees
+const partyAttendees = [...lateComers, ...earlyBirds];
+console.log(partyAttendees);
+
+// Output attendees from first to last arrival to the console
+partyAttendees.forEach((item, id) => {
+  console.log(`Attendee no ${id + 1}: ${item}`);
+})

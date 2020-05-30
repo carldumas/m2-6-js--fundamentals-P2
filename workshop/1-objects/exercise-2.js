@@ -18,3 +18,9 @@ const geometry = {
 //
 // Use that variable to look up the specified property in the `geometry` object.
 // Log it to the console:
+
+// - Dot notation (geometry.length)
+console.log(`The width is: ${geometry.width}`);
+
+// - Brackets (geometry["length"])
+console.log(`The width is: ${geometry[myKey]}`);

@@ -23,3 +23,17 @@ let mostPopularFood = [
 // After all the foods have been logged, the program should end.
 //
 // HINT: You'll need to use `setInterval` and `clearInterval`.
+
+
+let revMostPopularFood = mostPopularFood.reverse();
+let countdown = revMostPopularFood.length;
+
+let i = 0;
+let id = setInterval(function(){
+  if (i >= revMostPopularFood.length) {                  
+    clearInterval(id);           
+  } else {
+    console.log(`${countdown} ${revMostPopularFood[i++]}`);
+    countdown--;
+  }
+}, 1000);
